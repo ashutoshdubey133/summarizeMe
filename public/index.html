@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<title>
+  Summarize Me
+</title>
+
+<style media="screen">
+  body{
+    text-align: center;
+  }
+  #frm{
+    margin: 6vh 10vw;
+  }
+</style>
+
+</head>
+
+<body>
+<h1>Summarize Any Text 📝</h1>
+
+<div id="frm">
+<form method="post" action="http://localhost:8080/summarized">
+  <label for="input"><h4>Paste Text You Want To Summarize</h4></label></br>
+  <textarea style="margin-top: 3vh; margin-bottom: 3vh;" name="input" class="form-control" id="input" rows="8" cols="80"></textarea>
+  <input type="submit" class="btn btn-primary"></input>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</htmL>
