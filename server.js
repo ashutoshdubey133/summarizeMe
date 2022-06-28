@@ -1,19 +1,26 @@
 const express = require( 'express');
 const app = express();
 
-const nlp = require('compromise');
-
 app.use(express.urlencoded());
 
-app.post('/summarized', (req, res) => {
+app.use(express.static('public'));
+
+try{
+  app.post('/summarized', (req, res) => {
   let text = req.body.input;
   let result = '<h3>The Summary is</h3>' + summarize(text);
   let original = '</br><h3> Your Original Input Was: </h3></br>' + text;
-  res.send(result + original);
-});
+  let button = `<br><center><button style="margin-top:5vh;background-color:#000000;height:4vh;"><a style="color:#FFFFFF;text-decoration:none" href="http://localhost:${port}/index.html">Summarise another text</a></button></center>`;
+  res.send(result + original + button);
+});}
+catch(e){
+  console.log(e);
+}
 
-app.listen(8080, () => {
-  console.log(`Server running on port 8080`);
+const port = process.env.PORT || 80;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
 var total=0;
@@ -27,6 +34,7 @@ function summarize(text) {
   let sscore = senScore(wfreq,sentences);
   let avgscore = total/slength;
   let result = finalize(sscore,avgscore);
+  console.log(result);
   return result;
 }
 
@@ -57,7 +65,6 @@ for (var i = 0; i < sentences.length; i++) {
   for (var j = 0; j < tempwords.length; j++) {
     var tmpnum = wfreq[tempwords[j]] || 0;
     tempscore += tmpnum;
-    console.log(tempscore + " " + wfreq[tempwords[j]] + " " + tempwords[j]);
   }
   sentencesscore[sentences[i]] = tempscore;
   total += tempscore;

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,9 @@
   },
   "homepage": "https://github.com/ashutoshdubey133/summarizeMe#readme",
   "dependencies": {
-    "compromise": "^14.3.1",
-    "express": "^4.18.1",
-    "nodemon": "^2.0.18"
-  }
+    "express": "^4.18.1"
+  },
+  "engines": {
+   "node": "16.15.1"
+ }
 }
