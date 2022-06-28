@@ -10,7 +10,7 @@ try{
   let text = req.body.input;
   let result = '<h3>The Summary is</h3>' + summarize(text);
   let original = '</br><h3> Your Original Input Was: </h3></br>' + text;
-  let button = `<br><center><button style="margin-top:5vh;background-color:#000000;height:4vh;"><a style="color:#FFFFFF;text-decoration:none" href="http://localhost:${port}/index.html">Summarise another text</a></button></center>`;
+  let button = '<br><center><button style="margin-top:5vh;background-color:#000000;height:4vh;"><a style="color:#FFFFFF;text-decoration:none" href="/index.html">Summarise another text</a></button></center>';
   res.send(result + original + button);
 });}
 catch(e){
