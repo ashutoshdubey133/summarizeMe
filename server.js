@@ -78,7 +78,7 @@ function finalize(sscore,avgscore) {
   let result = "";
 
   for (var score in sscore) {
-    if(sscore[score]> 1.4 * avgscore){
+    if(sscore[score]> 1.7 * avgscore){
       let tmp = "";
       if(score[0] == " ")
         tmp = score[1].toUpperCase() + score.slice(2);
